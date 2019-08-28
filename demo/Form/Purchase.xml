@@ -68,7 +68,8 @@
         </Operation>
         <Operation Key="optKey1" Caption="下推入库单">
             <Action>
-                <![CDATA[Map('Purchase2StockIn', 'Purchase')]]>
+                <![CDATA[IIF(Select>0, Map('Purchase2StockIn', 'StockIn'),  Confirm('请选择数据！'));
+]]>
             </Action>
         </Operation>
     </OperationCollection>
