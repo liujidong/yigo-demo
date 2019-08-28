@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Map Caption="采购单映射入库单" Key="Purchase2StockIn" SrcDataObjectKey="Purchase" TgtDataObjectKey="StockIn" AllowSurplus="true" MaxPushValue="PurchaseDetail.Amount*1.2">
+    <SourceTableCollection Height="180" Width="216" X="30" Y="30">
+        <SourceTable Key="PurchaseDetail" IsPrimary="true" TargetTableKey="StockInDetail">
+            <SourceField Definition="Material" TargetFieldKey="Material"/>
+            <SourceField Definition="Amount" TargetFieldKey="Amount" EdgeType="Focus"/>
+        </SourceTable>
+    </SourceTableCollection>
+    <TargetTableCollection Height="180" Width="205" X="287" Y="30">
+        <TargetTable Key="StockInDetail" IsPrimary="true">
+            <TargetField Definition="Material"/>
+            <TargetField Definition="Amount">
+                <Feedback DataObjectKey="Purchase" FieldKey="StockInAmount" TableKey="PurchaseDetail"/>
+            </TargetField>
+        </TargetTable>
+    </TargetTableCollection>
+    <FeedbackCollection>
+        <FeedbackObject Height="150" ObjectKey="Purchase" Width="216" X="592" Y="30">
+            <FeedbackTable TableKey="PurchaseDetail">
+                <FeedbackField FieldKey="StockInAmount"/>
+            </FeedbackTable>
+        </FeedbackObject>
+    </FeedbackCollection>
+</Map>

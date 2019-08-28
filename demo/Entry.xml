@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <Entry Caption="根" Key="root">
     <Entry Caption="界面演示自定义表单" Icon="Bill.png" Key="demoCustomBill">
-        <EntryItem Caption="物料字典" FormKey="DictEdit" Key="MaterialDict" Media="WEB,PC,IOS,ANDROID," Parameters="FormKey=MaterialDict" Type="Form"/>
+        <EntryItem Caption="物料字典" FormKey="DictEdit" Key="MaterialDict" Parameters="FormKey=MaterialDict" Type="Form"/>
+        <EntryItem Caption="入库单视图" FormKey="StockInView" Key="StockInView" Type="Form"/>
+        <EntryItem Caption="采购单视图" FormKey="PurchaseView" Key="PurchaseView" Media="WEB,PC,IOS,ANDROID," Type="Form"/>
     </Entry>
 </Entry>
