@@ -35,13 +35,16 @@ demo/BPM.xml*d4c52553604bbc6c021b80bd8d158299
 demo/CommonDef.xml*696fc9699fe3bd8e5c79eb33fff6957d
 demo/DataMap/Purchase2StockIn.xml*d8c0b204e47fa03bf66233d9814995d8
 demo/DataMap/QuotePurchaseData.xml*8bd6883bb91d1fe419404fd592c0a775
-demo/Entry.xml*4cd85fd0b27754255576185de55eb648
+demo/DataObject/Inventory.xml*56f1bbbc469d170cdf53111bdac02ad0
+demo/Entry.xml*54ec2d29b52ca9e3058383b325c01197
+demo/Form/DictTest.xml*ab28a2445af6f6fbe562de2e94a5f46a
 demo/Form/MaterialDict.xml*4fbc34f54f03c1b8c820cb85f9e98208
 demo/Form/Purchase.xml*b3ac23024bc6f840c682fc2cdc9e18ca
 demo/Form/PurchaseData.xml*d5193ff6bdaecad9fae5030da86bda3e
 demo/Form/PurchaseView.xml*8f00bac341058128d219189268e79bef
 demo/Form/StockIn.xml*936ca46b5c6436b1f5e49610b011d30a
 demo/Form/StockInView.xml*15283354f46c3e46a423f316708dab84
+demo/Form/WarehouseDict.xml*ef8e26d47f50d629ad86684e7a9393f5
 demo/MobileDef.xml*7bafadb248f28ea356dff13acea2569c
 demo/Project.xml*e2a700036adb5c4d2c101cd6d63399b0
 demo/SecurityFilter.xml*c5de35aebbbe69ff82950692b01a6a85

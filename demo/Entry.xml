@@ -3,6 +3,8 @@
     <Entry Caption="界面演示自定义表单" Icon="Bill.png" Key="demoCustomBill">
         <EntryItem Caption="物料字典" FormKey="DictEdit" Key="MaterialDict" Parameters="FormKey=MaterialDict" Type="Form"/>
         <EntryItem Caption="入库单视图" FormKey="StockInView" Key="StockInView" Type="Form"/>
-        <EntryItem Caption="采购单视图" FormKey="PurchaseView" Key="PurchaseView" Media="WEB,PC,IOS,ANDROID," Type="Form"/>
+        <EntryItem Caption="采购单视图" FormKey="PurchaseView" Key="PurchaseView" Type="Form"/>
+        <EntryItem Caption="仓库字典" FormKey="DictEdit" Key="WarehouseDict" Parameters="FormKey=WarehouseDict" Type="Form"/>
+        <EntryItem Caption="字典展示" FormKey="DictTest" Key="DictTest" Media="WEB,PC,IOS,ANDROID," Type="Form"/>
     </Entry>
 </Entry>
