@@ -25,7 +25,7 @@
                     <Column Key="VERID" Caption="对象版本" DataType="Integer" DBColumnName="VERID"/>
                     <Column Key="DVERID" Caption="对象明细版本" DataType="Integer" DBColumnName="DVERID"/>
                     <Column Key="Sequence" Caption="序号" DataType="Integer" DBColumnName="SEQUENCE"/>
-                    <Column Key="Material" Caption="物料" DataType="Varchar"/>
+                    <Column Key="Material" Caption="物料" DataType="Long"/>
                     <Column Key="Amount" Caption="数量" DataType="Numeric" Precision="16" Scale="2"/>
                     <Column Key="MapCount" Caption="映射数量标记" DataType="Integer"/>
                     <Column Key="StockInAmount" Caption="已入库数量" DataType="Numeric" Precision="16" Scale="2"/>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Form Key="PurchaseData" Caption="采购单数据" FormType="Entity">
+    <DataSource>
+        <DataObject Key="PurchaseData" Caption="PurchaseData" PrimaryTableKey="PurchaseDataHead" PrimaryType="Entity">
+            <TableCollection>
+                <Table Key="PurchaseDataDetail" Caption="明细表" DBTableName="PurchaseDataDetail" TableMode="Detail" SourceType="Query" IndexPrefix="I_PurchaseDataDetail">
+                    <Column Key="OID" Caption="对象标识" DataType="Long" DBColumnName="OID"/>
+                    <Column Key="POID" Caption="父对象标识" DataType="Long" DBColumnName="POID"/>
+                    <Column Key="SOID" Caption="主对象标识" DataType="Long" DBColumnName="SOID"/>
+                    <Column Key="VERID" Caption="对象版本" DataType="Integer" DBColumnName="VERID"/>
+                    <Column Key="DVERID" Caption="对象明细版本" DataType="Integer" DBColumnName="DVERID"/>
+                    <Column Key="Sequence" Caption="序号" DataType="Integer" DBColumnName="SEQUENCE"/>
+                    <Column Key="Material" Caption="物料" DataType="Long"/>
+                    <Column Key="Amount" Caption="采购总数量" DataType="Numeric" Precision="16" Scale="2"/>
+                    <Column Key="NotInAmount" Caption="未入库数量" DataType="Numeric" Precision="16" Scale="2"/>
+                    <TableFilter Type="Const">
+                        <![CDATA[pd.Amount-pd.StockInAmount>0]]>
+                    </TableFilter>
+                    <Statement>
+                        <![CDATA[select pd.OID,pd.SOID,Material,Amount,Amount-StockInAmount as NotInAmount
+from PurchaseHead ph join PurchaseDetail pd on ph.oid=pd.soid]]>
+                    </Statement>
+                </Table>
+            </TableCollection>
+        </DataObject>
+    </DataSource>
+    <OperationCollection>
+        <Operation Key="optKey1" Caption="下推入库单">
+            <Action>
+                <![CDATA[MapToForm('QuotePurchaseData');
+Close();]]>
+            </Action>
+        </Operation>
+    </OperationCollection>
+    <ScriptCollection>
+        <Script Key="Load" Caption="载入" Range="Action" Verb="Load">
+            <![CDATA[LoadData();]]>
+        </Script>
+    </ScriptCollection>
+    <Body PopHeight="500px" PopWidth="pref">
+        <Block>
+            <FlexFlowLayoutPanel Key="root" Caption="根面板">
+                <ToolBar Key="ToolBar1" Height="pref" Caption="ToolBar1">
+                    <ToolBarItemCollection/>
+                </ToolBar>
+                <SplitPanel Key="main" Orientation="Vertical" Height="100%" Caption="主面板">
+                    <GridLayoutPanel Key="GridLayoutPanel1" Caption="GridLayoutPanel1">
+                        <Button Key="Button1" Caption="查询" X="0" Y="0">
+                            <OnClick>
+                                <![CDATA[LoadData();]]>
+                            </OnClick>
+                        </Button>
+                        <RowDefCollection RowGap="5">
+                            <RowDef Height="30px"/>
+                        </RowDefCollection>
+                        <ColumnDefCollection ColumnGap="5">
+                            <ColumnDef Width="100px"/>
+                            <ColumnDef Width="50%"/>
+                            <ColumnDef Width="100px"/>
+                            <ColumnDef Width="50%"/>
+                        </ColumnDefCollection>
+                    </GridLayoutPanel>
+                    <Grid Key="detail" Caption="明细" Height="100%">
+                        <GridColumnCollection>
+                            <GridColumn Key="C0" Caption="选择" ColumnType="Detail" Visible="true" Width="100px"/>
+                            <GridColumn Key="Material" Caption="物料" Width="80px"/>
+                            <GridColumn Key="Amount" Caption="采购总数量" Width="80px"/>
+                            <GridColumn Key="NotInAmount" Caption="未入库数量" Width="80px"/>
+                        </GridColumnCollection>
+                        <GridRowCollection>
+                            <GridRow Key="R_0" TableKey="PurchaseDataDetail">
+                                <GridCell Key="Select" Caption="选择" CellType="CheckBox" Enable="true" IsSelect="true"/>
+                                <GridCell Key="Material" Caption="物料" CellType="Dict" ItemKey="MaterialDict">
+                                    <DataBinding ColumnKey="Material"/>
+                                </GridCell>
+                                <GridCell Key="Amount" Caption="采购总数量" CellType="NumberEditor" Format="">
+                                    <DataBinding ColumnKey="Amount"/>
+                                </GridCell>
+                                <GridCell Key="NotInAmount" Caption="未入库数量" CellType="NumberEditor" Format="">
+                                    <DataBinding ColumnKey="NotInAmount"/>
+                                </GridCell>
+                            </GridRow>
+                        </GridRowCollection>
+                    </Grid>
+                    <SplitSize Size="100px"/>
+                    <SplitSize Size="100%"/>
+                </SplitPanel>
+            </FlexFlowLayoutPanel>
+        </Block>
+    </Body>
+</Form>

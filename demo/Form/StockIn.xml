@@ -25,7 +25,7 @@
                     <Column Key="VERID" Caption="对象版本" DataType="Integer" DBColumnName="VERID"/>
                     <Column Key="DVERID" Caption="对象明细版本" DataType="Integer" DBColumnName="DVERID"/>
                     <Column Key="Sequence" Caption="序号" DataType="Integer" DBColumnName="SEQUENCE"/>
-                    <Column Key="Material" Caption="物料" DataType="Varchar"/>
+                    <Column Key="Material" Caption="物料" DataType="Long"/>
                     <Column Key="Amount" Caption="数量" DataType="Numeric" Precision="16" Scale="2"/>
                     <Column Key="MapKey" Caption="映射标识" DataType="Varchar"/>
                     <Column Key="SrcOID" Caption="来源行标识" DataType="Long"/>
@@ -65,6 +65,11 @@
         <Operation Key="Close" Caption="关闭" Visible="ReadOnly()">
             <Action>
                 <![CDATA[Close()]]>
+            </Action>
+        </Operation>
+        <Operation Key="optKey1" Caption="上引采购单数据">
+            <Action>
+                <![CDATA[ShowModal('PurchaseData');]]>
             </Action>
         </Operation>
     </OperationCollection>

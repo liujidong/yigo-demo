@@ -46,7 +46,7 @@
                                 <ColumnDef Width="100px"/>
                             </ColumnDefCollection>
                         </GridLayoutPanel>
-                        <GridLayoutPanel Key="ButtonPanel" Padding="5px" Caption="按钮面板">
+                        <GridLayoutPanel Key="ButtonPanel" Padding="5px" Height="pref" Caption="按钮面板">
                             <Button Key="Query" Caption="查询" X="1" Y="0" Enable="true">
                                 <OnClick>
                                     <![CDATA[
@@ -71,10 +71,10 @@
                             </ColumnDefCollection>
                         </GridLayoutPanel>
                     </FlexFlowLayoutPanel>
-                    <ListView Key="list" PageLoadType="DB" TableKey="StockInHead" X="0" Y="1">
+                    <ListView Key="list" PageLoadType="DB" TableKey="StockInHead">
                         <ListViewColumnCollection>
                             <ListViewColumn Key="OID" Caption="对象标识" ColumnType="TextEditor" DataColumnKey="OID" TableKey="StockInHead" Visible="false" Width="30px"/>
-                            <ListViewColumn Key="NO_LV" Caption="单据编号" ColumnType="TextEditor" DataColumnKey="NO"/>
+                            <ListViewColumn Key="NO_LV" Caption="单据编号" ColumnType="TextEditor" DataColumnKey="NO" Width="175px"/>
                         </ListViewColumnCollection>
                         <RowDblClick>
                             <![CDATA[Open('StockIn', OID)]]>
