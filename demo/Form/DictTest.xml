@@ -29,6 +29,11 @@
                     <Label Key="Lab_Dict1" Caption="Dict1" X="0" Y="0"/>
                     <Dict Key="ParentWarehouse" Caption="父仓库" BuddyKey="Lab_ParentWarehouse" X="1" Y="1" ItemKey="WarehouseDict">
                         <DataBinding TableKey="DictTest" ColumnKey="ParentWarehouse"/>
+                        <ItemFilter>
+                            <Filter Type="FieldValue">
+                                <FilterValue FieldKey="NodeType" RefValue="1" Type="Const"/>
+                            </Filter>
+                        </ItemFilter>
                     </Dict>
                     <Label Key="Lab_ParentWarehouse" Caption="父仓库" X="0" Y="1"/>
                     <Dict Key="SonWarehouse" Caption="子仓库" BuddyKey="Lab_SonWarehouse" X="3" Y="1" ItemKey="WarehouseDict" Root="ParentWarehouse">
