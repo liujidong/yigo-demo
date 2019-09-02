@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<Form Key="StockIn" Caption="入库单" FormType="Entity" ViewKey="StockInView">
+<Form Key="StockOut" Caption="出库单" FormType="Entity" ViewKey="StockOutView">
     <DataSource>
-        <DataObject Key="StockIn" Caption="StockIn" PrimaryTableKey="StockInHead" PrimaryType="Entity">
+        <DataObject Key="StockOut" Caption="StockOut" PrimaryTableKey="StockOutHead" PrimaryType="Entity">
             <TableCollection>
-                <Table Key="StockInHead" Caption="头表1" IndexPrefix="I_StockInHead">
+                <Table Key="StockOutHead" Caption="头表1" IndexPrefix="I_StockOutHead">
                     <Column Key="OID" Caption="对象标识" DataType="Long"/>
                     <Column Key="SOID" Caption="主对象标识" DataType="Long"/>
                     <Column Key="POID" Caption="父对象标识" DataType="Long"/>
@@ -18,19 +18,16 @@
                     <Column Key="ModifyTime" Caption="修改时间" DataType="DateTime"/>
                     <Column Key="InstanceID" Caption="流程实例" DataType="Long"/>
                 </Table>
-                <Table Key="StockInDetail" Caption="明细表" DBTableName="StockInDetail" TableMode="Detail" IndexPrefix="I_StockInDetail">
+                <Table Key="StockOutDetail" Caption="明细表" DBTableName="StockOutDetail" TableMode="Detail" IndexPrefix="I_StockOutDetail">
                     <Column Key="OID" Caption="对象标识" DataType="Long" DBColumnName="OID"/>
                     <Column Key="POID" Caption="父对象标识" DataType="Long" DBColumnName="POID"/>
                     <Column Key="SOID" Caption="主对象标识" DataType="Long" DBColumnName="SOID"/>
                     <Column Key="VERID" Caption="对象版本" DataType="Integer" DBColumnName="VERID"/>
                     <Column Key="DVERID" Caption="对象明细版本" DataType="Integer" DBColumnName="DVERID"/>
                     <Column Key="Sequence" Caption="序号" DataType="Integer" DBColumnName="SEQUENCE"/>
-                    <Column Key="Material" Caption="物料" DataType="Long"/>
-                    <Column Key="Amount" Caption="数量" DataType="Numeric" Precision="16" Scale="2"/>
-                    <Column Key="MapKey" Caption="映射标识" DataType="Varchar"/>
-                    <Column Key="SrcOID" Caption="来源行标识" DataType="Long"/>
-                    <Column Key="SrcSOID" Caption="来源表单标识" DataType="Long"/>
                     <Column Key="Warehouse" DataType="Long"/>
+                    <Column Key="Material" DataType="Long"/>
+                    <Column Key="Amount" DataType="Numeric" Precision="16" Scale="2"/>
                 </Table>
             </TableCollection>
         </DataObject>
@@ -45,7 +42,7 @@
         </Operation>
         <Operation Key="New" Caption="新增" Visible="ReadOnly()">
             <Action>
-                <![CDATA[New('StockIn', 'self');]]>
+                <![CDATA[New('StockOut', 'self');]]>
             </Action>
         </Operation>
         <Operation Key="Delete" Caption="删除" Visible="ReadOnly()">
@@ -68,11 +65,6 @@
                 <![CDATA[Close()]]>
             </Action>
         </Operation>
-        <Operation Key="optKey1" Caption="上引采购单数据">
-            <Action>
-                <![CDATA[ShowModal('PurchaseData');]]>
-            </Action>
-        </Operation>
     </OperationCollection>
     <ScriptCollection>
         <Script Key="Load" Caption="载入" Range="Action" Verb="Load">
@@ -89,15 +81,15 @@
                     <GridLayoutPanel Key="first_head" Height="pref" Padding="5px" Caption="基本信息">
                         <Label Key="Lab_NO" Caption="单据编号" X="0" Y="0"/>
                         <TextEditor Key="NO" Caption="单据编号" BuddyKey="Lab_NO" X="1" Y="0" Enable="false" AsQuery="true">
-                            <DataBinding TableKey="StockInHead" ColumnKey="NO"/>
+                            <DataBinding TableKey="StockOutHead" ColumnKey="NO"/>
                         </TextEditor>
                         <Label Key="Lab_BillDate" Caption="单据日期" X="2" Y="0"/>
                         <DatePicker Key="BillDate" Caption="单据日期" BuddyKey="Lab_BillDate" X="3" Y="0" Enable="false">
-                            <DataBinding TableKey="StockInHead" ColumnKey="BillDate"/>
+                            <DataBinding TableKey="StockOutHead" ColumnKey="BillDate"/>
                         </DatePicker>
                         <Label Key="Lab_Status" Caption="单据状态" X="4" Y="0"/>
                         <ComboBox Key="Status" Caption="单据状态" BuddyKey="Lab_Status" X="5" Y="0" SourceType="Status">
-                            <DataBinding TableKey="StockInHead" ColumnKey="Status"/>
+                            <DataBinding TableKey="StockOutHead" ColumnKey="Status"/>
                         </ComboBox>
                         <RowDefCollection RowHeight="30" RowGap="6">
                             <RowDef/>
@@ -116,17 +108,17 @@
                     <Grid Key="detail" Caption="明细" Height="100%">
                         <GridColumnCollection>
                             <GridColumn Key="C0" Caption="选择" ColumnType="Detail" Visible="true" Width="100px"/>
-                            <GridColumn Key="warehouse" Caption="仓库" Width="80px"/>
-                            <GridColumn Key="Merial" Caption="物料" Width="80px"/>
+                            <GridColumn Key="Warehouse" Caption="仓库" Width="80px"/>
+                            <GridColumn Key="Material" Caption="物料" Width="80px"/>
                             <GridColumn Key="Amount" Caption="数量" Width="80px"/>
                         </GridColumnCollection>
                         <GridRowCollection>
-                            <GridRow Key="R_0" TableKey="StockInDetail">
+                            <GridRow Key="R_0" TableKey="StockOutDetail">
                                 <GridCell Key="Select" Caption="选择" CellType="CheckBox" Enable="true" IsSelect="true"/>
-                                <GridCell Key="warehouse" Caption="仓库" CellType="Dict" ItemKey="WarehouseDict">
+                                <GridCell Key="Warehouse" Caption="仓库" CellType="Dict" ItemKey="WarehouseDict">
                                     <DataBinding ColumnKey="Warehouse"/>
                                 </GridCell>
-                                <GridCell Key="Merial" Caption="物料" CellType="Dict" ItemKey="MaterialDict">
+                                <GridCell Key="Material" Caption="物料" CellType="Dict" ItemKey="MaterialDict">
                                     <DataBinding ColumnKey="Material"/>
                                 </GridCell>
                                 <GridCell Key="Amount" Caption="数量" CellType="NumberEditor" Format="">
@@ -137,19 +129,19 @@
                     </Grid>
                     <GridLayoutPanel Key="second_head" Height="pref" Padding="5px" Caption="审批信息">
                         <Dict Key="Creator" Caption="制单人" BuddyKey="Lab_Creator" X="1" Y="0" Enable="false" ItemKey="Operator">
-                            <DataBinding TableKey="StockInHead" ColumnKey="Creator"/>
+                            <DataBinding TableKey="StockOutHead" ColumnKey="Creator"/>
                         </Dict>
                         <Label Key="Lab_Creator" Caption="制单人" X="0" Y="0"/>
                         <DatePicker Key="CreateTime" Caption="制单时间" BuddyKey="Lab_CreateTime" X="3" Y="0" Enable="false">
-                            <DataBinding TableKey="StockInHead" ColumnKey="CreateTime"/>
+                            <DataBinding TableKey="StockOutHead" ColumnKey="CreateTime"/>
                         </DatePicker>
                         <Label Key="Lab_CreateTime" Caption="制单时间" X="2" Y="0"/>
                         <Dict Key="Modifier" Caption="修改人" BuddyKey="Lab_Modifier" X="1" Y="1" Enable="false" ItemKey="Operator">
-                            <DataBinding TableKey="StockInHead" ColumnKey="Modifier"/>
+                            <DataBinding TableKey="StockOutHead" ColumnKey="Modifier"/>
                         </Dict>
                         <Label Key="Lab_Modifier" Caption="修改人" X="0" Y="1"/>
                         <DatePicker Key="ModifyTime" Caption="修改时间" BuddyKey="Lab_ModifyTime" X="3" Y="1" Enable="false">
-                            <DataBinding TableKey="StockInHead" ColumnKey="ModifyTime"/>
+                            <DataBinding TableKey="StockOutHead" ColumnKey="ModifyTime"/>
                         </DatePicker>
                         <Label Key="Lab_ModifyTime" Caption="修改时间" X="2" Y="1"/>
                         <RowDefCollection RowHeight="30" RowGap="6">
