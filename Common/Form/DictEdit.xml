@@ -67,7 +67,7 @@
                 <![CDATA[ExportDict(GetPara("FormKey"));]]>
             </Action>
         </Operation>
-        <Operation Key="ExcelImport" Caption="Excel导入" Visible="false">
+        <Operation Key="ExcelImport" Caption="Excel导入">
             <Action>
                 <![CDATA[ImportExcel(true,true);]]>
             </Action>

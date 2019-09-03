@@ -9,3 +9,6 @@ http://yigo.bokesoft.com:8081/learning-video.jsp
 
 数据关系：
 采购单(待入库)--上引下推-->入库单--数据迁移-->库存余额表<--数据迁移--出库单
+
+导入导出：
+http://yigo.bokesoft.com:8081/document/answer/Excel_Import&Export/out/html/Yigo_Excel_Import&Export.html
