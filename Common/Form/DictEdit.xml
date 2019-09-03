@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <Form Caption="字典编辑" Key="DictEdit" FormulaCaption="Para('EntryCaption')" FormulaAbbrCaption="Para('EntryCaption')">
 	<OperationCollection>
 		<Operation Key="NewDict" Caption="新增(N)" ShortCuts="Ctrl+N" Visible="!Container.IsNewOrEdit()">
@@ -62,6 +62,16 @@
 				]]>
 			</Action>
 		</Operation>
+        <Operation Key="ExcelExport" Caption="Excel导出">
+            <Action>
+                <![CDATA[ExportDict(GetPara("FormKey"));]]>
+            </Action>
+        </Operation>
+        <Operation Key="ExcelImport" Caption="Excel导入" Visible="false">
+            <Action>
+                <![CDATA[ImportExcel(true,true);]]>
+            </Action>
+        </Operation>
 	</OperationCollection>
 	<Body> 
 		<Block>
