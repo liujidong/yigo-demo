@@ -74,7 +74,7 @@
         </Operation>
         <Operation Key="optKey2" Caption="打印预览" Enable="True" Visible="True">
             <Action>
-                <![CDATA[PrintPreview("",true)
+                <![CDATA[PrintPreview()
 //PrintPreview(reportKey, fillEmptyPrint)]]>
             </Action>
         </Operation>

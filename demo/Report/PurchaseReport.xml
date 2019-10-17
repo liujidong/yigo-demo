@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<Report Caption="采购单打印模板" FormKey="Purchase" Key="PurchaseReport" PageHeight="842" PageID="A4" PageWidth="595" PaperHeight="842" PaperID="A4" PaperWidth="595" LeftMargin="20" RightMargin="20">
+<Report Caption="采购单打印模板" FormKey="Purchase" Key="PurchaseReport" PageHeight="842" PageID="A4" PageWidth="595" PaperHeight="842" PaperID="A4" PaperWidth="595" LeftMargin="20" RightMargin="20" TopMargin="10">
     <DataSource>
         <Table Key="PurchaseHead" Caption="基本信息" SourceType="DataObject">
             <Field Caption="对象标识" Key="OID"/>
@@ -34,13 +34,12 @@
             <Columns>
                 <Column Width="210"/>
                 <Column Width="212"/>
-                <Column Width="160"/>
+                <Column Width="123"/>
             </Columns>
             <Rows>
                 <Row Height="30">
                     <Cell>
                         <Display EncodingType="" ErrorCorrectionLevel="" ForeColor="#336666">
-                            <Font Bold="true" Size="18"/>
                             <Border BottomColor="#1a4d4d" BottomStyle="1" LeftColor="#1a4d4d" LeftStyle="1" RightColor="#1a4d4d" RightStyle="1" TopColor="#1a4d4d" TopStyle="1"/>
                         </Display>
                         <CellText>
@@ -49,7 +48,6 @@
                     </Cell>
                     <Cell>
                         <Display EncodingType="" ErrorCorrectionLevel="" ForeColor="#336666">
-                            <Font Bold="true" Size="18"/>
                             <Border BottomColor="#1a4d4d" BottomStyle="1" LeftColor="#1a4d4d" LeftStyle="1" RightColor="#1a4d4d" RightStyle="1" TopColor="#1a4d4d" TopStyle="1"/>
                         </Display>
                         <CellText>
@@ -58,7 +56,6 @@
                     </Cell>
                     <Cell>
                         <Display EncodingType="" ErrorCorrectionLevel="" ForeColor="#336666">
-                            <Font Bold="true" Size="18"/>
                             <Border BottomColor="#1a4d4d" BottomStyle="1" LeftColor="#1a4d4d" LeftStyle="1" RightColor="#1a4d4d" RightStyle="1" TopColor="#1a4d4d" TopStyle="1"/>
                         </Display>
                         <CellText>
@@ -101,7 +98,7 @@
                 </Row>
             </Rows>
         </Section>
-        <Section Type="Table">
+        <Section Type="Paragraph">
             <Columns>
                 <Column Width="80"/>
                 <Column Width="80"/>
@@ -129,13 +126,12 @@
         <Section Type="Table">
             <Columns>
                 <Column Width="282"/>
-                <Column Width="292"/>
+                <Column Width="264"/>
             </Columns>
             <Rows>
                 <Row Height="30" Type="DetailHead">
                     <Cell>
                         <Display EncodingType="" ErrorCorrectionLevel="" ForeColor="#1a3399">
-                            <Font Bold="true" Size="18"/>
                             <Border BottomColor="#1a4d4d" BottomStyle="1" LeftColor="#1a4d4d" LeftStyle="1" RightColor="#1a4d4d" RightStyle="1" TopColor="#1a4d4d" TopStyle="1"/>
                         </Display>
                         <CellText>
@@ -144,7 +140,6 @@
                     </Cell>
                     <Cell>
                         <Display EncodingType="" ErrorCorrectionLevel="" ForeColor="#1a3399">
-                            <Font Bold="true" Size="18"/>
                             <Border BottomColor="#1a4d4d" BottomStyle="1" LeftColor="#1a4d4d" LeftStyle="1" RightColor="#1a4d4d" RightStyle="1" TopColor="#1a4d4d" TopStyle="1"/>
                         </Display>
                         <CellText>
