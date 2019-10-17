@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<Report Caption="采购单打印模板" FormKey="Purchase" Key="PurchaseReport" PageHeight="842" PageID="A4" PageWidth="595" PaperHeight="842" PaperID="A4" PaperWidth="595" LeftMargin="20" RightMargin="20" TopMargin="10">
+<Report Caption="采购单打印模板" FormKey="Purchase" Key="PurchaseReport" PageHeight="842" PageID="A4" PageWidth="595" PaperHeight="842" PaperID="A4" PaperWidth="595" LeftMargin="20" RightMargin="20">
     <DataSource>
         <Table Key="PurchaseHead" Caption="基本信息" SourceType="DataObject">
             <Field Caption="对象标识" Key="OID"/>
@@ -40,6 +40,7 @@
                 <Row Height="30">
                     <Cell>
                         <Display EncodingType="" ErrorCorrectionLevel="" ForeColor="#336666">
+                            <Font Size="18" Bold="true"/>
                             <Border BottomColor="#1a4d4d" BottomStyle="1" LeftColor="#1a4d4d" LeftStyle="1" RightColor="#1a4d4d" RightStyle="1" TopColor="#1a4d4d" TopStyle="1"/>
                         </Display>
                         <CellText>
@@ -48,6 +49,7 @@
                     </Cell>
                     <Cell>
                         <Display EncodingType="" ErrorCorrectionLevel="" ForeColor="#336666">
+                            <Font Size="18" Bold="true"/>
                             <Border BottomColor="#1a4d4d" BottomStyle="1" LeftColor="#1a4d4d" LeftStyle="1" RightColor="#1a4d4d" RightStyle="1" TopColor="#1a4d4d" TopStyle="1"/>
                         </Display>
                         <CellText>
@@ -56,6 +58,7 @@
                     </Cell>
                     <Cell>
                         <Display EncodingType="" ErrorCorrectionLevel="" ForeColor="#336666">
+                            <Font Size="18" Bold="true"/>
                             <Border BottomColor="#1a4d4d" BottomStyle="1" LeftColor="#1a4d4d" LeftStyle="1" RightColor="#1a4d4d" RightStyle="1" TopColor="#1a4d4d" TopStyle="1"/>
                         </Display>
                         <CellText>
@@ -66,6 +69,7 @@
                 <Row Height="30">
                     <Cell Caption="单据编号" FieldKey="NO" Key="NO" SourceType="Field" TableKey="PurchaseHead">
                         <Display EncodingType="" ErrorCorrectionLevel="">
+                            <Font Size="18"/>
                             <Border BottomColor="#1a4d4d" BottomStyle="1" LeftColor="#1a4d4d" LeftStyle="1" RightColor="#1a4d4d" RightStyle="1" TopColor="#1a4d4d" TopStyle="1"/>
                         </Display>
                         <CellText>
@@ -74,6 +78,7 @@
                     </Cell>
                     <Cell Caption="单据日期" FieldKey="BillDate" Key="BillDate" SourceType="Field" TableKey="PurchaseHead">
                         <Display EncodingType="" ErrorCorrectionLevel="">
+                            <Font Size="18"/>
                             <Format DataType="Date" FormatString="yyyy-MM-dd HH:mm:ss"/>
                             <Border BottomColor="#1a4d4d" BottomStyle="1" LeftColor="#1a4d4d" LeftStyle="1" RightColor="#1a4d4d" RightStyle="1" TopColor="#1a4d4d" TopStyle="1"/>
                         </Display>
@@ -83,6 +88,7 @@
                     </Cell>
                     <Cell Caption="单据状态" FieldKey="Status" Key="Status" SourceType="Field" TableKey="PurchaseHead">
                         <Display EncodingType="" ErrorCorrectionLevel="">
+                            <Font Size="18"/>
                             <Format DataType="List">
                                 <ListItem Text="初始" Value="0"/>
                                 <ListItem Text="审批中" Value="1"/>
@@ -132,6 +138,7 @@
                 <Row Height="30" Type="DetailHead">
                     <Cell>
                         <Display EncodingType="" ErrorCorrectionLevel="" ForeColor="#1a3399">
+                            <Font Size="18" Bold="true"/>
                             <Border BottomColor="#1a4d4d" BottomStyle="1" LeftColor="#1a4d4d" LeftStyle="1" RightColor="#1a4d4d" RightStyle="1" TopColor="#1a4d4d" TopStyle="1"/>
                         </Display>
                         <CellText>
@@ -140,6 +147,7 @@
                     </Cell>
                     <Cell>
                         <Display EncodingType="" ErrorCorrectionLevel="" ForeColor="#1a3399">
+                            <Font Size="18" Bold="true"/>
                             <Border BottomColor="#1a4d4d" BottomStyle="1" LeftColor="#1a4d4d" LeftStyle="1" RightColor="#1a4d4d" RightStyle="1" TopColor="#1a4d4d" TopStyle="1"/>
                         </Display>
                         <CellText>
@@ -150,6 +158,7 @@
                 <Row Height="30" BackColor="0xffffffff" TableKey="PurchaseDetail" Type="Detail">
                     <Cell Caption="物料" FieldKey="Material" Key="Material" SourceType="Field">
                         <Display EncodingType="" ErrorCorrectionLevel="" ForeColor="#1a3399">
+                            <Font Size="18"/>
                             <Format DataType="Dict" ItemKey="MaterialDict"/>
                             <Border BottomColor="#1a4d4d" BottomStyle="1" LeftColor="#1a4d4d" LeftStyle="1" RightColor="#1a4d4d" RightStyle="1" TopColor="#1a4d4d" TopStyle="1"/>
                         </Display>
@@ -159,6 +168,7 @@
                     </Cell>
                     <Cell Caption="数量" FieldKey="Amount" Key="Amount" SourceType="Field">
                         <Display EncodingType="" ErrorCorrectionLevel="" ForeColor="#1a3399">
+                            <Font Size="18"/>
                             <Format DataType="Number" FormatString="###.##"/>
                             <Border BottomColor="#1a4d4d" BottomStyle="1" LeftColor="#1a4d4d" LeftStyle="1" RightColor="#1a4d4d" RightStyle="1" TopColor="#1a4d4d" TopStyle="1"/>
                         </Display>

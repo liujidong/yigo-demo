@@ -7,7 +7,7 @@ Common/Form/Browser.xml*f3715da907e4a25a4d9f39a36ffe69b0
 Common/Form/ChangePassWord.xml*6c6edfbbaba24425fe5d3ebd6f719cec
 Common/Form/CounterSignDialog.xml*0436bf3cef9f5054df4cdf666dd2d7fd
 Common/Form/Dialog.xml*f055c2bed3b508a1b91d12797b7f772c
-Common/Form/DictEdit.xml*37ff81ecbd8317991124d121b6d61493
+Common/Form/DictEdit.xml*b81b9eda24fdd22788ffbdc6b3dbe0ce
 Common/Form/DictQuery.xml*c49bc60cebab21a23a77700d915201c6
 Common/Form/Login.xml*99d7bd49b0ce0216704802f730a80625
 Common/Form/LoginOperators.xml*4ca2b981b700b1bdd73fdae941ecfc3e
@@ -42,9 +42,9 @@ demo/Entry.xml*b1c8f442220125aefe19f8909ae68d62
 demo/Form/DictTest.xml*87a239d0c786d1f78c68565aa5ad94a1
 demo/Form/InventoryList.xml*b963a0e59fd529104cb5a18a8db9db89
 demo/Form/MaterialDict.xml*4fbc34f54f03c1b8c820cb85f9e98208
-demo/Form/Purchase.xml*b3ac23024bc6f840c682fc2cdc9e18ca
+demo/Form/Purchase.xml*0d34534632509c286b1390ece7cf0f3f
 demo/Form/PurchaseData.xml*d5193ff6bdaecad9fae5030da86bda3e
-demo/Form/PurchaseView.xml*8f00bac341058128d219189268e79bef
+demo/Form/PurchaseView.xml*aa3029915d0d82b223afa0621326eb5b
 demo/Form/StockIn.xml*794e23f0ac7fbe6e22ab92db43f90b9e
 demo/Form/StockInView.xml*224788d284b63d2c4a54cad2e8d66c66
 demo/Form/StockOut.xml*e179bbbb5cf5488e3ee7aa6c5da8c1f0
@@ -52,6 +52,7 @@ demo/Form/StockOutView.xml*f8689cae68d196be343aa028b394d457
 demo/Form/WarehouseDict.xml*ef8e26d47f50d629ad86684e7a9393f5
 demo/MobileDef.xml*7bafadb248f28ea356dff13acea2569c
 demo/Project.xml*e2a700036adb5c4d2c101cd6d63399b0
+demo/Report/PurchaseReport.xml*3a126c5255bcd967a247381d0fe85ae3
 demo/SecurityFilter.xml*c5de35aebbbe69ff82950692b01a6a85
-readme.txt*8176d51ffafad75c9ea0f15e22a7698f
+readme.txt*b4ddf076fbea454b188bb7166bae92ca
 setting.xml*fec23900f40a7646f794c4e02cba1ead
