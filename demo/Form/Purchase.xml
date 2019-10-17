@@ -72,6 +72,17 @@
 ]]>
             </Action>
         </Operation>
+        <Operation Key="optKey2" Caption="打印预览" Enable="True" Visible="True">
+            <Action>
+                <![CDATA[PrintPreview("",true)
+//PrintPreview(reportKey, fillEmptyPrint)]]>
+            </Action>
+        </Operation>
+        <Operation Key="optKey3" Caption="打印">
+            <Action>
+                <![CDATA[Print()]]>
+            </Action>
+        </Operation>
     </OperationCollection>
     <ScriptCollection>
         <Script Key="Load" Caption="载入" Range="Action" Verb="Load">
