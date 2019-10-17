@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <Form Key="Purchase" Caption="采购单" FormType="Entity" ViewKey="PurchaseView">
     <DataSource>
-        <DataObject Key="Purchase" Caption="Purchase" PrimaryTableKey="PurchaseHead" PrimaryType="Entity">
+        <DataObject Key="Purchase" Caption="Purchase" PrimaryTableKey="PurchaseHead" NoPrefix="PURC" PrimaryType="Entity">
             <TableCollection>
                 <Table Key="PurchaseHead" Caption="头表1" IndexPrefix="I_PurchaseHead">
                     <Column Key="OID" Caption="对象标识" DataType="Long"/>
