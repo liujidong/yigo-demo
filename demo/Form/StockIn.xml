@@ -31,6 +31,8 @@
                     <Column Key="SrcOID" Caption="来源行标识" DataType="Long"/>
                     <Column Key="SrcSOID" Caption="来源表单标识" DataType="Long"/>
                     <Column Key="Warehouse" DataType="Long"/>
+                    <Column Key="Price" Caption="Price" DataType="Numeric" Precision="16" Scale="2"/>
+                    <Column Key="Total" Caption="Total" DataType="Numeric" Precision="16" Scale="2"/>
                 </Table>
             </TableCollection>
         </DataObject>
@@ -119,6 +121,8 @@
                             <GridColumn Key="warehouse" Caption="仓库" Width="80px"/>
                             <GridColumn Key="Merial" Caption="物料" Width="80px"/>
                             <GridColumn Key="Amount" Caption="数量" Width="80px"/>
+                            <GridColumn Key="Price" Caption="单价" Width="80px"/>
+                            <GridColumn Key="Total" Caption="金额" Width="80px"/>
                         </GridColumnCollection>
                         <GridRowCollection>
                             <GridRow Key="R_0" TableKey="StockInDetail">
@@ -132,6 +136,12 @@
                                 <GridCell Key="Amount" Caption="数量" CellType="NumberEditor" Format="">
                                     <DataBinding ColumnKey="Amount"/>
                                 </GridCell>
+                                <GridCell Key="Price" Caption="单价" CellType="NumberEditor" Format="">
+                                    <DataBinding ColumnKey="Price"/>
+                                </GridCell>
+                                <GridCell Key="Total" Caption="金额" CellType="NumberEditor" Format="">
+                                    <DataBinding ColumnKey="Total" DefaultFormulaValue="Price*Amount"/>
+                                </GridCell>
                             </GridRow>
                             <GridRow Key="row1" RowHeight="36" RowType="Group" GroupKey="Merial">
                                 <GridCell Key="cell1"/>
@@ -140,6 +150,8 @@
                                 <GridCell Key="cell4" CellType="NumberEditor" Format="">
                                     <DataBinding DefaultFormulaValue="Sum(&quot;Amount&quot;)"/>
                                 </GridCell>
+                                <GridCell Key="cell10"/>
+                                <GridCell Key="cell13"/>
                             </GridRow>
                             <GridRow Key="row2" RowHeight="36" RowType="Total">
                                 <GridCell Key="cell5"/>
@@ -148,6 +160,8 @@
                                 <GridCell Key="cell8" CellType="NumberEditor" Format="">
                                     <DataBinding DefaultFormulaValue="Sum(&quot;Amount&quot;)" ValueDependency="Amount"/>
                                 </GridCell>
+                                <GridCell Key="cell11"/>
+                                <GridCell Key="cell14"/>
                             </GridRow>
                         </GridRowCollection>
                     </Grid>
