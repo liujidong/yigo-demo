@@ -141,6 +141,14 @@
                                     <DataBinding DefaultFormulaValue="Sum(&quot;Amount&quot;)"/>
                                 </GridCell>
                             </GridRow>
+                            <GridRow Key="row2" RowHeight="36" RowType="Total">
+                                <GridCell Key="cell5"/>
+                                <GridCell Key="cell6"/>
+                                <GridCell Key="cell7" Caption="合计"/>
+                                <GridCell Key="cell8" CellType="NumberEditor" Format="">
+                                    <DataBinding DefaultFormulaValue="Sum(&quot;Amount&quot;)" ValueDependency="Amount"/>
+                                </GridCell>
+                            </GridRow>
                         </GridRowCollection>
                     </Grid>
                     <GridLayoutPanel Key="second_head" Height="pref" Padding="5px" Caption="审批信息">
