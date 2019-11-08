@@ -126,11 +126,19 @@
                                 <GridCell Key="warehouse" Caption="仓库" CellType="Dict" ItemKey="WarehouseDict">
                                     <DataBinding ColumnKey="Warehouse"/>
                                 </GridCell>
-                                <GridCell Key="Merial" Caption="物料" CellType="Dict" ItemKey="MaterialDict">
+                                <GridCell Key="Merial" Caption="物料" CellType="Dict" ItemKey="MaterialDict" CellGroupType="RowGroup">
                                     <DataBinding ColumnKey="Material"/>
                                 </GridCell>
                                 <GridCell Key="Amount" Caption="数量" CellType="NumberEditor" Format="">
                                     <DataBinding ColumnKey="Amount"/>
+                                </GridCell>
+                            </GridRow>
+                            <GridRow Key="row1" RowHeight="36" RowType="Group" GroupKey="Merial">
+                                <GridCell Key="cell1"/>
+                                <GridCell Key="cell2"/>
+                                <GridCell Key="cell3" Caption="小计"/>
+                                <GridCell Key="cell4" CellType="NumberEditor" Format="">
+                                    <DataBinding DefaultFormulaValue="Sum(&quot;Amount&quot;)"/>
                                 </GridCell>
                             </GridRow>
                         </GridRowCollection>
