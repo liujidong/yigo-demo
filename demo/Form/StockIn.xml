@@ -17,6 +17,7 @@
                     <Column Key="Modifier" Caption="修改人" DataType="Long"/>
                     <Column Key="ModifyTime" Caption="修改时间" DataType="DateTime"/>
                     <Column Key="InstanceID" Caption="流程实例" DataType="Long"/>
+                    <Column Key="TotalPrice" Caption="TotalPrice" DataType="Numeric" Precision="16" Scale="2"/>
                 </Table>
                 <Table Key="StockInDetail" Caption="明细表" DBTableName="StockInDetail" TableMode="Detail" IndexPrefix="I_StockInDetail">
                     <Column Key="OID" Caption="对象标识" DataType="Long" DBColumnName="OID"/>
@@ -101,6 +102,10 @@
                         <ComboBox Key="Status" Caption="单据状态" BuddyKey="Lab_Status" X="5" Y="0" SourceType="Status">
                             <DataBinding TableKey="StockInHead" ColumnKey="Status"/>
                         </ComboBox>
+                        <NumberEditor Key="TotalPrice" Caption="总金额" BuddyKey="Lab_TotalPrice" X="1" Y="1" Format="" XSpan="2">
+                            <DataBinding TableKey="StockInHead" ColumnKey="TotalPrice" DefaultFormulaValue="Sum(&quot;Total&quot;);" ValueDependency="Total"/>
+                        </NumberEditor>
+                        <Label Key="Lab_TotalPrice" Caption="总金额" X="0" Y="1"/>
                         <RowDefCollection RowHeight="30" RowGap="6">
                             <RowDef/>
                             <RowDef/>
