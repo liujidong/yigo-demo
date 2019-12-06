@@ -13,12 +13,13 @@
                     <Column Key="Material" Caption="物料" DataType="Long"/>
                     <Column Key="Amount" Caption="采购总数量" DataType="Numeric" Precision="16" Scale="2"/>
                     <Column Key="NotInAmount" Caption="未入库数量" DataType="Numeric" Precision="16" Scale="2"/>
+                    <Column Key="Warehouse" Caption="仓库" DataType="Long"/>
                     <TableFilter Type="Const">
-                        <![CDATA[pd.Amount-pd.StockInAmount>0]]>
+                        <![CDATA[pd.Amount-pd.StockInAmount>0 and ph.Status=2]]>
                     </TableFilter>
                     <Statement>
-                        <![CDATA[select pd.OID,pd.SOID,Material,Amount,Amount-StockInAmount as NotInAmount
-from PurchaseHead ph join PurchaseDetail pd on ph.oid=pd.soid]]>
+                        <![CDATA[select pd.OID,pd.SOID,Material,Amount,Amount-StockInAmount as NotInAmount,pd.warehouse
+ from PurchaseHead ph join PurchaseDetail pd on ph.oid=pd.soid]]>
                     </Statement>
                 </Table>
             </TableCollection>
@@ -37,7 +38,7 @@ Close();]]>
             <![CDATA[LoadData();]]>
         </Script>
     </ScriptCollection>
-    <Body PopHeight="500px" PopWidth="pref">
+    <Body PopHeight="600px" PopWidth="800px">
         <Block>
             <FlexFlowLayoutPanel Key="root" Caption="根面板">
                 <ToolBar Key="ToolBar1" Height="pref" Caption="ToolBar1">
@@ -63,6 +64,7 @@ Close();]]>
                     <Grid Key="detail" Caption="明细" Height="100%">
                         <GridColumnCollection>
                             <GridColumn Key="C0" Caption="选择" ColumnType="Detail" Visible="true" Width="100px"/>
+                            <GridColumn Key="Warehouse" Caption="仓库" Width="80px"/>
                             <GridColumn Key="Material" Caption="物料" Width="80px"/>
                             <GridColumn Key="Amount" Caption="采购总数量" Width="80px"/>
                             <GridColumn Key="NotInAmount" Caption="未入库数量" Width="80px"/>
@@ -70,6 +72,9 @@ Close();]]>
                         <GridRowCollection>
                             <GridRow Key="R_0" TableKey="PurchaseDataDetail">
                                 <GridCell Key="Select" Caption="选择" CellType="CheckBox" Enable="true" IsSelect="true"/>
+                                <GridCell Key="Warehouse" Caption="仓库" CellType="Dict" ItemKey="WarehouseDict">
+                                    <DataBinding ColumnKey="Warehouse"/>
+                                </GridCell>
                                 <GridCell Key="Material" Caption="物料" CellType="Dict" ItemKey="MaterialDict">
                                     <DataBinding ColumnKey="Material"/>
                                 </GridCell>
