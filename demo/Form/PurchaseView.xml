@@ -73,8 +73,8 @@
                     </FlexFlowLayoutPanel>
                     <ListView Key="list" PageLoadType="DB" TableKey="PurchaseHead">
                         <ListViewColumnCollection>
-                            <ListViewColumn Key="OID" Caption="对象标识" ColumnType="TextEditor" DataColumnKey="OID" TableKey="PurchaseHead" Visible="false" Width="30px"/>
-                            <ListViewColumn Key="NO_LV" Caption="单据编号" ColumnType="TextEditor" DataColumnKey="NO" Width="175px"/>
+                            <ListViewColumn Key="OID" Caption="对象标识" ColumnType="TextEditor" DataColumnKey="OID" TableKey="PurchaseHead" Visible="false" Width="60px"/>
+                            <ListViewColumn Key="NO_LV" Caption="单据编号" ColumnType="TextEditor" DataColumnKey="NO" Width="175px" Sortable="true"/>
                         </ListViewColumnCollection>
                         <RowDblClick>
                             <![CDATA[Open('Purchase', OID)]]>

@@ -29,6 +29,7 @@
                     <Column Key="Amount" Caption="数量" DataType="Numeric" Precision="16" Scale="2"/>
                     <Column Key="MapCount" Caption="映射数量标记" DataType="Integer"/>
                     <Column Key="StockInAmount" Caption="已入库数量" DataType="Numeric" Precision="16" Scale="2"/>
+                    <Column Key="Warehouse" Caption="仓库" DataType="Long"/>
                 </Table>
             </TableCollection>
         </DataObject>
@@ -126,6 +127,7 @@
                     <Grid Key="detail" Caption="明细" Height="100%">
                         <GridColumnCollection>
                             <GridColumn Key="C0" Caption="选择" ColumnType="Detail" Visible="true" Width="100px"/>
+                            <GridColumn Key="warehouse" Caption="仓库" Width="80px"/>
                             <GridColumn Key="Material" Caption="物料" Width="80px"/>
                             <GridColumn Key="Amount" Caption="数量" Width="80px"/>
                             <GridColumn Key="AmountStockIn" Caption="已入库数量" Width="80px"/>
@@ -133,6 +135,9 @@
                         <GridRowCollection>
                             <GridRow Key="R_0" TableKey="PurchaseDetail">
                                 <GridCell Key="Select" Caption="选择" CellType="CheckBox" Enable="true" IsSelect="true"/>
+                                <GridCell Key="warehouse" Caption="仓库" CellType="Dict" ItemKey="WarehouseDict">
+                                    <DataBinding ColumnKey="Warehouse"/>
+                                </GridCell>
                                 <GridCell Key="Material" Caption="物料" CellType="Dict" ItemKey="MaterialDict">
                                     <DataBinding ColumnKey="Material"/>
                                 </GridCell>
