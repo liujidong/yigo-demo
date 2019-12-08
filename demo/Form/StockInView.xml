@@ -74,7 +74,7 @@
                     </FlexFlowLayoutPanel>
                     <ListView Key="list" PageLoadType="DB" TableKey="StockInHead">
                         <ListViewColumnCollection>
-                            <ListViewColumn Key="OID" Caption="对象标识" ColumnType="TextEditor" DataColumnKey="OID" TableKey="StockInHead" Visible="false" Width="30px"/>
+                            <ListViewColumn Key="OID" Caption="对象标识" ColumnType="TextEditor" DataColumnKey="OID" TableKey="StockInHead" Visible="false" Width="56px"/>
                             <ListViewColumn Key="NO_LV" Caption="单据编号" ColumnType="TextEditor" DataColumnKey="NO" Width="175px"/>
                             <ListViewColumn Key="Status" Caption="状态" ColumnType="ComboBox" DataColumnKey="Status" SourceType="Status"/>
                         </ListViewColumnCollection>

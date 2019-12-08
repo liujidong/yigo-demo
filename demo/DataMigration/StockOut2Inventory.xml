@@ -1,17 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<DataMigration Caption="出库迁移库存" Key="StockOut2Inventory" SrcDataObjectKey="StockOut" TgtDataObjectKey="Inventory">
-    <SourceTableCollection Height="210" Width="218" X="30" Y="30">
+<DataMigration Caption="出库迁移库存" Key="StockOut2Inventory" SrcDataObjectKey="StockOut" TgtDataObjectKey="Inventory" StatusFieldKey="Status" StatusValue="3">
+    <SourceTableCollection Height="240" Width="218" X="30" Y="30">
         <SourceTable TableKey="StockOutDetail" IsPrimary="true">
             <SourceField Definition="Warehouse" TargetFieldKey="Warehouse" TargetTableKey="Inventory" OpSign="Assign"/>
             <SourceField Definition="Material" TargetFieldKey="Material" TargetTableKey="Inventory" OpSign="Assign"/>
-            <SourceField Definition="Amount" IsNegtive="true" TargetFieldKey="Amount" TargetTableKey="Inventory"/>
+            <SourceField Definition="Amount" TargetFieldKey="Amount" TargetTableKey="Inventory" IsNegtive="true"/>
+            <SourceField Definition="Unit" TargetFieldKey="Unit" TargetTableKey="Inventory" OpSign="Assign"/>
         </SourceTable>
     </SourceTableCollection>
-    <TargetTableCollection Height="210" Width="175" X="297" Y="30">
+    <TargetTableCollection Height="240" Width="175" X="297" Y="30">
         <TargetTable TableKey="Inventory">
             <TargetField FieldKey="Warehouse"/>
             <TargetField FieldKey="Material"/>
             <TargetField FieldKey="Amount"/>
+            <TargetField FieldKey="Unit"/>
         </TargetTable>
     </TargetTableCollection>
 </DataMigration>

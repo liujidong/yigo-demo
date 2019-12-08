@@ -12,6 +12,7 @@
                         <ListViewColumn Key="warehouse" Caption="仓库" ColumnType="Dict" DataColumnKey="Warehouse" ItemKey="WarehouseDict"/>
                         <ListViewColumn Key="Material" Caption="物料" ColumnType="Dict" DataColumnKey="Material" ItemKey="MaterialDict"/>
                         <ListViewColumn Key="Amount" Caption="数量" ColumnType="NumberEditor" DataColumnKey="Amount" Format=""/>
+                        <ListViewColumn Key="Unit" Caption="单位" ColumnType="Dict" DataColumnKey="Unit" ItemKey="Unit"/>
                     </ListViewColumnCollection>
                 </ListView>
                 <GridLayoutPanel Key="GridLayoutPanel1" Height="pref" Caption="GridLayoutPanel1">
