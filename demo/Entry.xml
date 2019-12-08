@@ -1,13 +1,15 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <Entry Caption="根" Key="root">
     <Entry Caption="界面演示自定义表单" Icon="Bill.png" Key="demoCustomBill">
-        <EntryItem Caption="物料字典" FormKey="DictEdit" Key="MaterialDict" Parameters="FormKey=MaterialDict" Type="Form"/>
+        <Entry Caption="基础数据" Key="BasicData">
+            <EntryItem Caption="父子字典展示" FormKey="DictTest" Key="DictTest" Type="Form"/>
+            <EntryItem Caption="单位字典" FormKey="DictEdit" Key="Unit" Parameters="FormKey=Unit" Type="Form"/>
+            <EntryItem Caption="仓库字典" FormKey="DictEdit" Key="WarehouseDict" Parameters="FormKey=WarehouseDict" Type="Form"/>
+            <EntryItem Caption="物料字典" FormKey="DictEdit" Key="MaterialDict" Parameters="FormKey=MaterialDict" Type="Form"/>
+        </Entry>
         <EntryItem Caption="入库单视图" FormKey="StockInView" Key="StockInView" Type="Form"/>
         <EntryItem Caption="采购单视图" FormKey="PurchaseView" Key="PurchaseView" Type="Form"/>
-        <EntryItem Caption="仓库字典" FormKey="DictEdit" Key="WarehouseDict" Parameters="FormKey=WarehouseDict" Type="Form"/>
-        <EntryItem Caption="字典展示" FormKey="DictTest" Key="DictTest" Type="Form"/>
         <EntryItem Caption="库存余额表" FormKey="InventoryList" Key="InventoryList" Type="Form"/>
         <EntryItem Caption="出库单视图" FormKey="StockOutView" Key="StockOutView" Type="Form"/>
-        <EntryItem Caption="单位字典" FormKey="DictEdit" Key="Unit" Media="WEB,PC,IOS,ANDROID," Parameters="FormKey=Unit" Type="Form"/>
     </Entry>
 </Entry>

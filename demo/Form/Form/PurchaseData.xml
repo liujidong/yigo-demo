@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<Form Key="PurchaseData" Caption="采购单数据" FormType="Entity">
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Form Key="PurchaseData" Caption="采购单数据（未入库）" FormType="Entity">
     <DataSource>
         <DataObject Key="PurchaseData" Caption="PurchaseData" PrimaryTableKey="PurchaseDataHead" PrimaryType="Entity">
             <TableCollection>
